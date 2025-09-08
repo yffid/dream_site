@@ -146,13 +146,13 @@
       "permanent": false
     }
   ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "github": {
     "silent": true,
     "autoAlias": true
-  },
-  "cleanUrls": true,
-  "trailingSlash": false
+  }
 }
