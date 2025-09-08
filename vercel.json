@@ -145,7 +145,6 @@
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "regions": ["cdg1", "dub1", "hkg1"],
   "github": {
     "silent": true,
     "autoAlias": true
