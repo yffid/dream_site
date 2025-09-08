@@ -147,7 +147,7 @@
     }
   ],
   "framework": "vite",
-  "buildCommand": "npm install -g ts-node && npm install && npm run build",
+  "buildCommand": "npm install && npm run build",
   "outputDirectory": "dist",
   "github": {
     "silent": true,
