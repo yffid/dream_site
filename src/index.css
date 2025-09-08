@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Momta 2028 Design System - "Calm Prophecy" */
+/* All colors MUST be HSL for consistency */
+
+@layer base {
+  :root {
+    /* Momta Core Colors */
+    --momta-blue: 215 95% 55%;           /* Primary brand blue #1E7EFF */
+    --momta-blue-light: 215 85% 70%;     /* Light variant #4A94FF */
+    --momta-blue-dark: 215 100% 35%;     /* Dark variant #0056CC */
+    
+    --momta-slate: 220 13% 85%;          /* Neutral slate #D1D5DB */
+    --momta-slate-light: 220 13% 91%;    /* Light slate #E5E7EB */
+    --momta-slate-dark: 220 13% 46%;     /* Dark slate #6B7280 */
+    
+    --momta-night: 230 25% 6%;           /* Deep background #0A0A0F */
+    --momta-night-light: 230 20% 12%;    /* Elevated surfaces #1A1A24 */
+    
+    /* Glass Morphism */
+    --glass-bg: 230 25% 6% / 0.1;        /* Semi-transparent base */
+    --glass-border: 215 95% 55% / 0.2;   /* Subtle blue border */
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--momta-blue)), hsl(var(--momta-blue-light)));
+    --gradient-glass: linear-gradient(145deg, hsl(var(--glass-bg)), transparent);
+    --gradient-glow: radial-gradient(circle, hsl(var(--momta-blue) / 0.3), transparent);
+    
+    /* Legacy tokens mapped to Momta system */
+    --background: var(--momta-night);
+    --foreground: var(--momta-slate-light);
+    
+    --card: var(--momta-night-light);
+    --card-foreground: var(--momta-slate-light);
+    
+    --primary: var(--momta-blue);
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: var(--momta-slate-dark);
+    --secondary-foreground: var(--momta-slate-light);
+    
+    --muted: var(--momta-night-light);
+    --muted-foreground: var(--momta-slate-dark);
+    
+    --accent: var(--momta-blue-light);
+    --accent-foreground: var(--momta-night);
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: var(--momta-slate-dark);
+    --input: var(--momta-night-light);
+    --ring: var(--momta-blue);
+    
+    /* Momta Radius System */
+    --radius: 0.5rem;
+    --radius-momta-xl: 2rem;              /* 32px - Signature Momta curvature */
+    
+    /* Animation Timings */
+    --timing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --timing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Light Mode Theme */
+  .light {
+    /* Light mode Momta colors */
+    --momta-night: 0 0% 98%;             /* Light background #FAFAFA */
+    --momta-night-light: 0 0% 95%;       /* Light elevated surfaces #F2F2F2 */
+    --momta-slate: 220 13% 25%;          /* Dark text for light mode */
+    --momta-slate-light: 220 13% 15%;    /* Darker text */
+    --momta-slate-dark: 220 13% 65%;     /* Lighter muted text */
+    
+    /* Glass morphism for light mode */
+    --glass-bg: 0 0% 100% / 0.8;         /* Light glass background */
+    --glass-border: 215 95% 55% / 0.15;  /* Subtle blue border */
+    
+    /* Update legacy tokens for light mode */
+    --background: var(--momta-night);
+    --foreground: var(--momta-slate);
+    --card: var(--momta-night-light);
+    --card-foreground: var(--momta-slate);
+    --muted: 220 13% 95%;
+    --muted-foreground: var(--momta-slate-dark);
+    --border: 220 13% 85%;
+    --input: 0 0% 100%;
+    --accent-foreground: var(--momta-night);
+    --secondary-foreground: var(--momta-slate);
+  }
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    background-image: 
+      radial-gradient(at 40% 20%, hsl(var(--momta-blue) / 0.05) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsl(var(--momta-blue-light) / 0.05) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsl(var(--momta-blue) / 0.03) 0px, transparent 50%);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins;
+  }
+}
+
+@layer components {
+  /* Momta Glass Card Component */
+  .glass-card {
+    @apply relative backdrop-blur-[24px] border border-white/10;
+    background: linear-gradient(145deg, 
+      hsl(var(--momta-night-light) / 0.8), 
+      hsl(var(--momta-night) / 0.4)
+    );
+    border-radius: var(--radius-momta-xl);
+    box-shadow: 
+      inset 0 1px 0 0 hsl(var(--momta-blue) / 0.1),
+      0 20px 25px -5px hsl(var(--momta-night) / 0.4),
+      0 8px 10px -6px hsl(var(--momta-night) / 0.3);
+  }
+  
+  .glass-card::before {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    content: '';
+    background: var(--gradient-glow);
+    border-radius: var(--radius-momta-xl);
+    z-index: -1;
+  }
+  
+  .glass-card:hover::before {
+    @apply opacity-100;
+  }
+
+  /* M-Lens Flare Effect */
+  .m-lens {
+    @apply relative overflow-hidden;
+  }
+  
+  .m-lens::after {
+    @apply absolute inset-0 opacity-0 transition-all duration-700;
+    content: '';
+    background: conic-gradient(
+      from 0deg at 50% 50%, 
+      transparent 0deg, 
+      hsl(var(--momta-blue) / 0.3) 45deg, 
+      transparent 90deg, 
+      hsl(var(--momta-blue-light) / 0.2) 135deg, 
+      transparent 180deg
+    );
+    transform: translateX(-100%);
+  }
+  
+  .m-lens:hover::after {
+    @apply opacity-100;
+    transform: translateX(100%);
+  }
+
+  /* 2028 Badge */
+  .badge-2028 {
+    @apply inline-flex items-center px-3 py-1 text-xs font-semibold font-poppins;
+    background: var(--gradient-hero);
+    border-radius: var(--radius-momta-xl);
+    color: white;
+    box-shadow: 0 4px 12px hsl(var(--momta-blue) / 0.3);
+    animation: momta-pulse 2s ease-in-out infinite;
+  }
+
+  /* Typography Classes */
+  .display-1 {
+    @apply text-5xl md:text-7xl font-bold tracking-tight font-poppins;
+  }
+  
+  .display-2 {
+    @apply text-3xl md:text-5xl font-semibold tracking-tight font-poppins;
+  }
+  
+  .body-lg {
+    @apply text-lg md:text-xl font-inter leading-relaxed;
+  }
+}
+
+@layer utilities {
+  /* Momta Animations */
+  @keyframes momta-pulse {
+    0%, 100% { 
+      box-shadow: 0 4px 12px hsl(var(--momta-blue) / 0.3);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 8px 24px hsl(var(--momta-blue) / 0.5);
+      transform: scale(1.02);
+    }
+  }
+  
+  @keyframes momta-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  @keyframes momta-glow {
+    0%, 100% { 
+      filter: drop-shadow(0 0 8px hsl(var(--momta-blue) / 0.3));
+    }
+    50% { 
+      filter: drop-shadow(0 0 16px hsl(var(--momta-blue) / 0.6));
+    }
+  }
+
+  .animate-momta-pulse {
+    animation: momta-pulse 2s ease-in-out infinite;
+  }
+  
+  .animate-momta-reveal {
+    animation: momta-reveal 0.8s var(--timing-smooth) forwards;
+  }
+  
+  .animate-momta-glow {
+    animation: momta-glow 3s ease-in-out infinite;
+  }
+
+  /* Responsive breakpoints for asymmetrical layouts */
+  .layout-2-3 {
+    @apply grid grid-cols-1 lg:grid-cols-5 gap-8;
+  }
+  
+  .layout-2-3 > :first-child {
+    @apply lg:col-span-3;
+  }
+  
+  .layout-2-3 > :last-child {
+    @apply lg:col-span-2;
+  }
+
+  /* Radial gradient utility */
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+}
