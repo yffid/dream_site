@@ -152,7 +152,7 @@
   },
   "cleanUrls": true,
   "trailingSlash": false,
-  "error": {
-    "404": "/404.html"
-  }
+  "routes": [
+    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
+  ]
 }
