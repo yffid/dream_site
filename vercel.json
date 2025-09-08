@@ -9,6 +9,10 @@
       "destination": "https://blog.momta.ai"
     },
     {
+      "source": "/404",
+      "destination": "/404.html"
+    },
+    {
       "source": "/((?!api/.*).*)",
       "destination": "/"
     }
@@ -150,8 +154,5 @@
     "autoAlias": true
   },
   "cleanUrls": true,
-  "trailingSlash": false,
-  "routes": [
-    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
-  ]
+  "trailingSlash": false
 }
