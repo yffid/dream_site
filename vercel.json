@@ -1,8 +1,17 @@
 {
   "rewrites": [
-    { "source": "/api/:path*", "destination": "/api/:path*" },
-    { "source": "/blog", "destination": "https://blog.momta.ai" },
-    { "source": "/((?!api/.*).*)", "destination": "/" }
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    },
+    {
+      "source": "/blog",
+      "destination": "https://blog.momta.ai"
+    },
+    {
+      "source": "/((?!api/.*).*)",
+      "destination": "/"
+    }
   ],
   "headers": [
     {
