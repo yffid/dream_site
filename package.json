@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npx ts-node scripts/generate-sitemap.ts && vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "generate-sitemap": "ts-node scripts/generate-sitemap.ts",
+    "generate-sitemap": "npx ts-node scripts/generate-sitemap.ts",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test"
